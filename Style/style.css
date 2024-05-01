@@ -32,3 +32,19 @@ body {
     flex-direction: column;
     gap: 25px;
 }
+
+.container .user_actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.container .user_actions .see_tip_and_next_element {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
