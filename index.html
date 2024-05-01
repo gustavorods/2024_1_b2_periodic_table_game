@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./Style/style.css">
     <title>Química game</title>
 </head>
-<body>
+<body onload="randomElement()">
     <!-- Container  -->
     <div class="container">
         <!-- Element icon and its tips -->
@@ -20,9 +20,7 @@
 
             <!-- Element Icon -->
             <div class="element_icon_div">
-                <div class="element_icon">
-                    <img src="./images/ferro.png" alt="Element Icon">
-                </div>
+                <img src="./images/ferro.png" alt="Element Icon" id="element_icon">
             </div>
 
             <!-- Tip 2 -->
@@ -49,5 +47,7 @@
             
         </div>
     </div>
+
+<script src="./js/script.js"></script>
 </body>
 </html>
