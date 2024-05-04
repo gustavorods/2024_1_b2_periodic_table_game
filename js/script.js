@@ -1,46 +1,59 @@
 // HTML 
-let element_icon_html = document.querySelector("#element_icon");
-let next_element_html = document.querySelector("#next_element");
-let textField = document.querySelector("#user_response");
-let submitBotton = document.querySelector("#submit_button");
-
-// taking the path of each image
-let iron = "./images/ferro.png";
-let gold = "./images/Ouro.png";
-let plutonium = "./images/Plutonio.png";
+const elementIcon = document.querySelector("#element_icon");
+const nextElement = document.querySelector("#next_element");
+const textField = document.querySelector("#user_response");
+const submitButton = document.querySelector("#submit_button");
+const tipField = document.querySelectorAll(".tip");
+const showTipButton = document.querySelector("#see_tip");
 
 // Making object with the variables
-var elements = {
-    Ferro: iron,
-    Ouro: gold,
-    Plutônio: plutonium
-  };
+const elements = {
+    Ferro: "./images/ferro.png",
+    Ouro: "./images/Ouro.png",
+    Plutônio: "./images/Plutonio.png"
+};
+
+// Making the tips
+const elementsTips = {
+    Ferro: ["usado na siderúrgica", "Usado em portões", "Metal resistente", "Condutor", "Magnético", "Abundância no universo"]
+};
 
 // function to choose an element randomly
 let randomElementKey; // I will use it to check with the user's response
-
 function randomElement() {
-    textField.style.border = "2px solid gray";
-
-    let elementKeys = Object.keys(elements);
-    let randomIndex = Math.floor(Math.random() * elementKeys.length);
+    const elementKeys = Object.keys(elements);
+    const randomIndex = Math.floor(Math.random() * elementKeys.length);
     randomElementKey = elementKeys[randomIndex];
-    let randomElementImagePath = elements[randomElementKey];
-
-    element_icon_html.setAttribute('src', randomElementImagePath);
+    const randomElementImagePath = elements[randomElementKey];
+    elementIcon.setAttribute('src', randomElementImagePath);
 }
 
 // Function to check the user's response
-function checkUserResponde(userResponse) {
-    if(userResponse == randomElementKey) {
+function checkUserResponse(userResponse) {
+    if(userResponse === randomElementKey) {
         textField.style.border = "2px solid green";
 
-        // Aguarda 5000 milissegundos (5 segundos) antes de executar o restante do código
+        // Waits 1000 milliseconds (1 second) before executing the rest of the code
         setTimeout(function () {
-            randomElement();
             textField.value = "";
+            textField.style.border = "2px solid gray";
+            randomElement();
         }, 1000);
-    } else {
+    } 
+    else {
         textField.style.border = "2px solid red";
     }
 }
+
+// Function to show the tips 
+let counter = 0; // Used to control the tips field and to access the object that has the tips (randomElementKey)
+function showTip() {
+    if(counter == 6) {
+        alert("Você ja usou todas as dicas!");
+    }
+    else {
+        tipField[counter].innerHTML = elementsTips[randomElementKey][counter];
+        counter++;
+    }
+}
+
