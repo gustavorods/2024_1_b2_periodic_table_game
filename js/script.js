@@ -22,9 +22,12 @@ const elementsTips = {
 };
 
 
-// function to choose an element randomly
+// Function to choose an element randomly
 let randomElementKey; // I will use it to check with the user's response
 function randomElement() {
+    // Clear Fields
+    clearTipFilds();
+    
     const elementKeys = Object.keys(elements);
     const randomIndex = Math.floor(Math.random() * elementKeys.length);
     randomElementKey = elementKeys[randomIndex];
@@ -40,7 +43,10 @@ function checkUserResponse(userResponse) {
 
         // Waits 1000 milliseconds (1 second) before executing the rest of the code
         setTimeout(function () {
+            // Clear Fields
             textField.value = "";
+            clearTipFilds();
+
             textField.style.border = "2px solid gray";
             randomElement();
         }, 1000);
@@ -50,7 +56,7 @@ function checkUserResponse(userResponse) {
     }
 }
 
-    
+
 // Function to show the tips 
 let counter = 0; // Used to control the tips field and to access the object that has the tips (randomElementKey)
 function showTip() {
@@ -63,3 +69,12 @@ function showTip() {
     }
 }
 
+// Function to clear tips fields
+function clearTipFilds() {
+    for(let i = 0; i < 6; i++) {
+        tipField[i].innerHTML = "";
+
+        // Reset the counter for the next tips
+        counter = 0;
+    }
+}
