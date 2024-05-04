@@ -6,6 +6,7 @@ const submitButton = document.querySelector("#submit_button");
 const tipField = document.querySelectorAll(".tip");
 const showTipButton = document.querySelector("#see_tip");
 
+
 // Making object with the variables
 const elements = {
     Ferro: "./images/ferro.png",
@@ -15,8 +16,11 @@ const elements = {
 
 // Making the tips
 const elementsTips = {
-    Ferro: ["usado na siderúrgica", "Usado em portões", "Metal resistente", "Condutor", "Magnético", "Abundância no universo"]
+    Ferro: ["usado na siderúrgica", "Usado em portões", "Metal resistente", "Condutor", "Magnético", "Abundância no universo"],
+    Ouro: ["Valorizado por sua raridade", "Utilizado em joalheria", "Excelente condutor de eletricidade", "Inerte quimicamente", "Cor dourada característica", "História de uso em moedas e ornamentos"],
+    Plutônio: ["Altamente radioativo", "Usado em reatores nucleares", "Produzido em reações nucleares", "Utilizado em armas nucleares", "Descoberto em 1940", "Tem isótopos com diferentes aplicações"]
 };
+
 
 // function to choose an element randomly
 let randomElementKey; // I will use it to check with the user's response
@@ -27,6 +31,7 @@ function randomElement() {
     const randomElementImagePath = elements[randomElementKey];
     elementIcon.setAttribute('src', randomElementImagePath);
 }
+
 
 // Function to check the user's response
 function checkUserResponse(userResponse) {
@@ -45,6 +50,7 @@ function checkUserResponse(userResponse) {
     }
 }
 
+    
 // Function to show the tips 
 let counter = 0; // Used to control the tips field and to access the object that has the tips (randomElementKey)
 function showTip() {
