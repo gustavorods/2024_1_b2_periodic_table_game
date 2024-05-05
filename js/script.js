@@ -74,7 +74,7 @@ function clearTipFilds() {
     for(let i = 0; i < 6; i++) {
         tipField[i].innerHTML = "";
 
-        // Reset the counter for the next tips
+        // Reset the counter for the next tips.
         counter = 0;
     }
 }
