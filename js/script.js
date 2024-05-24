@@ -9,16 +9,16 @@ const showTipButton = document.querySelector("#see_tip");
 
 // Making object with the variables
 const elements = {
-    Ferro: "./images/ferro.png",
-    Ouro: "./images/Ouro.png",
-    Plutônio: "./images/Plutonio.png"
+    ferro: "./images/ferro.png",
+    ouro: "./images/Ouro.png",
+    plutônio: "./images/Plutonio.png"
 };
 
 // Making the tips
 const elementsTips = {
-    Ferro: ["usado na siderurgica", "Usado em portoes", "Metal resistente", "Condutor", "Magnetico", "Abundancia no universo"],
-    Ouro: ["Valorizado por sua raridade", "Utilizado em joalheria", "Excelente condutor de eletricidade", "Inerte quimicamente", "Cor dourada caracteristica", "Historia de uso em moedas e ornamentos"],
-    Plutônio: ["Altamente radioativo", "Usado em reatores nucleares", "Produzido em reacoes nucleares", "Utilizado em armas nucleares", "Descoberto em 1940", "Tem isotopos com diferentes aplicacoes"],
+    ferro: ["usado na siderurgica", "Usado em portoes", "Metal resistente", "Condutor", "Magnetico", "Abundancia no universo"],
+    ouro: ["Valorizado por sua raridade", "Utilizado em joalheria", "Excelente condutor de eletricidade", "Inerte quimicamente", "Cor dourada caracteristica", "Historia de uso em moedas e ornamentos"],
+    plutônio: ["Altamente radioativo", "Usado em reatores nucleares", "Produzido em reacoes nucleares", "Utilizado em armas nucleares", "Descoberto em 1940", "Tem isotopos com diferentes aplicacoes"],
 };
 
 
@@ -38,11 +38,16 @@ function randomElement() {
 
 // Function to check the user's response    
 function checkUserResponse(userResponse) {
+    // Removing the space from the answers and leaving them lower case
+    userResponse = userResponse.trim();
+    userResponse = userResponse.toLowerCase();
+
+    // Checking the answer
     if(userResponse === randomElementKey) {
         textField.style.border = "2px solid green";
 
         // Waits 1000 milliseconds (1 second) before executing the rest of the code
-        setTimeout(function () {
+        setTimeout( () => {
             // Clear Fields
             textField.value = "";
             clearTipFilds();
