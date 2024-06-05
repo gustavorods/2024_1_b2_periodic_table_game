@@ -10,43 +10,44 @@
   
     <!-- Container  -->
     <div class="container">
-        <h1>Acerte o elemento quimico!!</h1>
+        <h1 class="tittle">Acerte o elemento quimico!</h1>
         <!-- Element icon and its tips -->
-        <div class="element">
-            <!-- Tip 1 -->
-            <div class="tip_div">
-                <p class="tip" id="tip1">Teste</p>
-                <p class="tip" id="tip2">s</p>
-                <p class="tip" id="tip3">as</p>
+        <div class="element_and_interactions">
+            <div class="element">
+                <!-- Tip 1 -->
+                <div class="tip_div">
+                    <p class="tip" id="tip1">Teste</p>
+                    <p class="tip" id="tip2">s</p>
+                    <p class="tip" id="tip3">as</p>
+                </div>
+    
+                <!-- Element Icon -->
+                <div class="element_icon_div">
+                    <img src="./images/ferro.png" alt="Element Icon" id="element_icon">
+                </div>
+    
+                <!-- Tip 2 -->
+                <div class="tip_div">
+                    <p class="tip"id="tip4">sa</p>
+                    <p class="tip" id="tip5">s</p>
+                    <p class="tip" id="tip6">s</p>
+                </div>
             </div>
-
-            <!-- Element Icon -->
-            <div class="element_icon_div">
-                <img src="./images/ferro.png" alt="Element Icon" id="element_icon">
+    
+            <!-- Send button, option to move to the next element and see tip -->
+            <div class="user_actions">
+                <!--  Submit button  -->
+                <div class="submit_div">
+                    <input type="text" name="user_response" id="user_response">
+                    <button type="submit" id="submit_button">Enviar</button>
+                </div>
+    
+                <!-- move to the next element and see tip-->
+                <div class="see_tip_and_next_element">
+                    <input type="button" value="Ver dica" id="see_tip">
+                    <input type="button" value="Próximo elemento" id="next_element">
+                </div>
             </div>
-
-            <!-- Tip 2 -->
-            <div class="tip_div">
-                <p class="tip"id="tip4">sa</p>
-                <p class="tip" id="tip5">s</p>
-                <p class="tip" id="tip6">s</p>
-            </div>
-        </div>
-
-        <!-- Send button, option to move to the next element and see tip -->
-        <div class="user_actions">
-            <!--  Submit button  -->
-            <div class="submit_div">
-                <input type="text" name="user_response" id="user_response">
-                <button type="submit" id="submit_button">Enviar</button>
-            </div>
-
-            <!-- move to the next element and see tip-->
-            <div class="see_tip_and_next_element">
-                <input type="button" value="Ver dica" id="see_tip">
-                <input type="button" value="Próximo elemento" id="next_element">
-            </div>
-            
         </div>
     </div>
 

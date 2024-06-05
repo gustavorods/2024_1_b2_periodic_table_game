@@ -14,17 +14,29 @@ body {
     width: 80%;
     max-width: 800px; /* Set a maximum width for responsiveness */
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px; /* Rounded corners for the container */
     background-color: #fff; /* White background for content */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: all 0.3s ease; /* Smooth transitions for dynamic changes */
   }
   
+  .container .element_and_interactions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  } 
+
   /* Element Section */
   .element {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     margin-bottom: 20px;
   }
   
