@@ -4,6 +4,8 @@ const nextElement = document.querySelector("#next_element");
 const textField = document.querySelector("#user_response");
 const submitButton = document.querySelector("#submit_button");
 const tipField = document.querySelectorAll(".tip");
+const HTLMtittle = document.querySelector(".tittle");
+const HTMLcontent = document.querySelector(".element_and_interactions");
 const showTipButton = document.querySelector("#see_tip");
 
 
@@ -44,6 +46,16 @@ function checkUserResponse(userResponse) {
 
     // Checking the answer
     if(userResponse === randomElementKey) {
+        // Remove element from object (elements) when user guesses its name  
+        delete elements[randomElementKey];
+        
+        // Changing the interface after the user hits all the elements
+        if(Object.keys(elements).length == 0) {
+            HTLMtittle.innerHTML = "Parabéns, você acertou tudo!";
+            HTMLcontent.innerHTML = "";
+        } 
+
+        // Placing colors after the user hits the element
         textField.style.border = "2px solid green";
 
         // Waits 1000 milliseconds (1 second) before executing the rest of the code
@@ -83,3 +95,4 @@ function clearTipFilds() {
         counter = 0;
     }
 }
+
